@@ -34,12 +34,12 @@ adminButton.addEventListener("click", function() {
   clienteDiv.style.display = "none";
 
   const adminButtons = document.getElementsByClassName("admin-button");
-  for (let i = 0; i < adminButtons.length; i++) {
-    adminButtons[i].style.display = "block";
+  for (const element of adminButtons) {
+    element.style.display = "block";
   }
   const clientButtons = document.getElementsByClassName("client-button");
-  for (let i = 0; i < clientButtons.length; i++) {
-    clientButtons[i].style.display = "none";
+  for (const element of clientButtons) {
+    element.style.display = "none";
   }
 });
 
@@ -48,8 +48,8 @@ cliButton.addEventListener("click", function() {
   clienteDiv.style.display ="block";
   //Ocultar botones de editar y eliminar
   const adminButtons = document.getElementsByClassName("admin-button");
-  for (let i = 0; i < adminButtons.length; i++) {
-    adminButtons[i].style.display = "none";
+  for (const element of adminButtons) {
+    element.style.display = "none";
   }
 
 });
@@ -152,7 +152,7 @@ function renderizarProductos() {
         btnsConfirmar[i].addEventListener("click", function () {
           const indiceEncontrado = lista.findIndex((producto) => producto.nombre === ListaReservas[i].producto.nombre);
           lista = Cafeteria.ActualizarMenuCantidadProductoXReserva(lista, indiceEncontrado, ListaReservas[i].cantidad);
-          // lista[indiceEncontrado].cantidad = lista[indiceEncontrado].cantidad - ListaReservas[i].cantidad;
+          
           renderizarProductos();
         });
         }
@@ -166,8 +166,8 @@ function renderizarProductos() {
       }
       //const btnsEditar = document.getElementsByClassName("btn_editar");
     const btnsEditar = document.getElementsByClassName("btn_editar");
-    for (let i = 0; i < btnsEditar.length; i++) {
-    btnsEditar[i].addEventListener("click", function () {
+    for (const element of btnsEditar) {
+    element.addEventListener("click", function () {
       const index = this.getAttribute("data-index");
       mostrarFormularioEdicion(index);
     });

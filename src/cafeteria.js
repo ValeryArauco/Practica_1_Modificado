@@ -44,22 +44,22 @@ function ActualizarCantidadMenu(productos,indice,cantidad,reserva)
 
 function Reservar(productos,reservas,listaReservas,cantidad)
 {
-    for(let i=0;i<productos.length;i++)
+    for(let producto of productos)
     {
-        for(let j=0;j<reservas.length;j++)
+        for(let reserva of reservas)
         {
-            if(CompararNombresProductos(productos[i],reservas[j]))
+            if(CompararNombresProductos(producto,reserva))
             {
-                if(typeof(productos[i]) == "object"){
-                    let nuevo = new Producto(productos[i].nombre, productos[i].descripcion,productos[i].precio,productos[i].cantidad,productos[i].categoria);
-                    let reserva=new Reserva(nuevo,cantidad);
+                if(typeof(producto) == "object"){
+                    let nuevo = new Producto(producto.nombre, producto.descripcion,producto.precio,producto.cantidad,producto.categoria);
+                    let reserva = new Reserva(nuevo,cantidad);
                     if(validarReserva(reserva,nuevo)){
                         // listaProductos[i].cantidad-=cantidad;
                         listaReservas.push(reserva);
                     }
                 }
                 else{
-                    listaReservas.push(productos[i]);
+                    listaReservas.push(producto);
                 }
             }
         }
@@ -88,15 +88,15 @@ function MostrarPorCategoria(categoria,lista)
 {
     let listaCat=[];
 
-    for(let i=0;i<lista.length;i++)
+    for(let producto of lista)
     {
-        if(lista[i].categoria===categoria)
+        if(producto.categoria===categoria)
         {
-            listaCat.push(lista[i]);
+            listaCat.push(producto);
         }
         if(categoria==="todos")
         {
-            listaCat.push(lista[i]);
+            listaCat.push(producto);
         }
     }
     return listaCat;

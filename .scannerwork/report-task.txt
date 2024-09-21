@@ -2,5 +2,5 @@ projectKey=Proyecto-Cafe-modificado
 serverUrl=http://localhost:9000
 serverVersion=10.6.0.92116
 dashboardUrl=http://localhost:9000/dashboard?id=Proyecto-Cafe-modificado
-ceTaskId=d5f0a17d-3ca3-47bc-b1e8-3fc37d4be439
-ceTaskUrl=http://localhost:9000/api/ce/task?id=d5f0a17d-3ca3-47bc-b1e8-3fc37d4be439
+ceTaskId=d9df3cce-8330-40ae-8536-b9097ccde874
+ceTaskUrl=http://localhost:9000/api/ce/task?id=d9df3cce-8330-40ae-8536-b9097ccde874

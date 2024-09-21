@@ -44,9 +44,9 @@ function ActualizarCantidadMenu(productos,indice,cantidad,reserva)
 
 function Reservar(productos,reservas,listaReservas,cantidad)
 {
-    for(var i=0;i<productos.length;i++)
+    for(let i=0;i<productos.length;i++)
     {
-        for(var j=0;j<reservas.length;j++)
+        for(let j=0;j<reservas.length;j++)
         {
             if(CompararNombresProductos(productos[i],reservas[j]))
             {
@@ -73,7 +73,7 @@ function MostrarListaReservas(reservas){
 
 function MostrarMenu(lista)
 {
-    for(var i=0;i<lista.length;i++)
+    for(let i=0;i<lista.length;i++)
     {
         lista[i].ActualizarDisponibilidad();
         if(lista[i].disponible===false)
@@ -88,7 +88,7 @@ function MostrarPorCategoria(categoria,lista)
 {
     let listaCat=[];
 
-    for(var i=0;i<lista.length;i++)
+    for(let i=0;i<lista.length;i++)
     {
         if(lista[i].categoria===categoria)
         {

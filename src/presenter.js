@@ -144,8 +144,6 @@ function renderizarProductos() {
           }
         ListaReservas = Cafeteria.getListaProductosReservas();
         ListaReservas = Cafeteria.Reservar(lista, [lista[i]], ListaReservas,cantidad);
-        //ListaReservas[ListaReservas.length - 1].cantidad = cantidad; 
-        //lista = Cafeteria.ActualizarMenuCantidadProductoXReserva(lista, i, cantidad);
         
         renderizarProductos();
         });

@@ -4756,6 +4756,10 @@ textarea.form-control-lg {
   --bs-alert-color: #0e0119;
   --bs-alert-bg: #d1ccd4;
   --bs-alert-border-color: #b9b3bf;
+  color: #fff;
+  background-color: #170229;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.3), 0 0 2px rgba(255, 255, 255, 0.3), 0 0 5px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 2rem rgba(46, 27, 62, 0.4), 0 0 8rem rgba(46, 27, 62, 0.3);
 }
 .alert-dark .alert-link {
   color: #0b0114;
@@ -11172,12 +11176,7 @@ legend {
   text-shadow: 0 0 1px rgba(255, 255, 255, 0.3), 0 0 2px rgba(255, 255, 255, 0.3), 0 0 5px rgba(255, 255, 255, 0.2);
   box-shadow: 0 0 2rem rgba(87, 221, 234, 0.4), 0 0 8rem rgba(87, 221, 234, 0.3);
 }
-.alert-dark {
-  color: #fff;
-  background-color: #170229;
-  text-shadow: 0 0 1px rgba(255, 255, 255, 0.3), 0 0 2px rgba(255, 255, 255, 0.3), 0 0 5px rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 2rem rgba(46, 27, 62, 0.4), 0 0 8rem rgba(46, 27, 62, 0.3);
-}
+
 .alert .alert-link,
 .alert a {
   color: #fff;

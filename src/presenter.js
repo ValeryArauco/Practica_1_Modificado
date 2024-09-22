@@ -143,7 +143,7 @@ function renderizarProductos() {
             cantidad = parseInt(cantidad);
           }
         ListaReservas = Cafeteria.getListaProductosReservas();
-        ListaReservas = Cafeteria.Reservar(lista, [lista[i]], ListaReservas,cantidad);
+        ListaReservas = Cafeteria.Reservar(lista, lista[i], ListaReservas,cantidad);
         
         renderizarProductos();
         });
@@ -158,7 +158,6 @@ function renderizarProductos() {
         }
       for (let i = 0; i <  btnsEliminarReserva.length; i++) {
         btnsEliminarReserva[i].addEventListener("click", function () {
-        let pos = lista.indexOf(ListaReservas[i].nombre);
         ListaReservas = Cafeteria.eliminarProducto(ListaReservas[i].nombre,ListaReservas);
         alert('se elimino la reserva reservo correctamente');
         renderizarProductos();

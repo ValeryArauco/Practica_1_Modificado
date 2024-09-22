@@ -23,12 +23,11 @@ function ActualizarMenuCantidadProductoXReserva(listaMenu, posicion, cantidad){
 
 function validarReserva(reserva,producto)
 {
+    let valido = false
     if(reserva.cantidad<=producto.cantidad){
-        return true;
+        valido = true;
     }
-    else{
-        return false;
-    }
+    return valido
 }
 
 function ActualizarCantidadMenu(productos,indice,cantidad,reserva)
@@ -42,25 +41,21 @@ function ActualizarCantidadMenu(productos,indice,cantidad,reserva)
     return productos;
 }
 
-function Reservar(productos,reservas,listaReservas,cantidad)
+function Reservar(productos,reserva,listaReservas,cantidad)
 {
     for(let producto of productos)
     {
-        for(let reserva of reservas)
+        if(CompararNombresProductos(producto,reserva))
         {
-            if(CompararNombresProductos(producto,reserva))
-            {
-                if(typeof(producto) == "object"){
-                    let nuevo = new Producto(producto.nombre, producto.descripcion,producto.precio,producto.cantidad,producto.categoria);
-                    let reserva = new Reserva(nuevo,cantidad);
-                    if(validarReserva(reserva,nuevo)){
-                        // listaProductos[i].cantidad-=cantidad;
-                        listaReservas.push(reserva);
-                    }
+            if(typeof(producto) == "object"){
+                let nuevo = new Producto(producto.nombre, producto.descripcion,producto.precio,producto.cantidad,producto.categoria);
+                let reserva = new Reserva(nuevo,cantidad);
+                if(validarReserva(reserva,nuevo)){
+                    listaReservas.push(reserva);
                 }
-                else{
-                    listaReservas.push(producto);
-                }
+            }
+            else{
+                listaReservas.push(producto);
             }
         }
     }

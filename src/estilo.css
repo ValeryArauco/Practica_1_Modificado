@@ -2973,6 +2973,8 @@ textarea.form-control-lg {
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: #e44c55;
   --bs-btn-disabled-border-color: #e44c55;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.3), 0 0 2px rgba(255, 255, 255, 0.3), 0 0 5px rgba(255, 255, 255, 0.2);
+
 }
 
 .btn-light {
@@ -11040,9 +11042,7 @@ table,
 .btn-danger, .btn-outline-danger {
   box-shadow: 0 0 2px rgba(228, 76, 85, 0.9), 0 0 4px rgba(228, 76, 85, 0.4), 0 0 1rem rgba(228, 76, 85, 0.3), 0 0 4rem rgba(228, 76, 85, 0.1);
 }
-.btn-danger {
-  text-shadow: 0 0 1px rgba(255, 255, 255, 0.3), 0 0 2px rgba(255, 255, 255, 0.3), 0 0 5px rgba(255, 255, 255, 0.2);
-}
+
 .btn-outline-danger {
   color: #fff;
   border-width: 2px;

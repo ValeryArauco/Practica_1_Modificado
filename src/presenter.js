@@ -1,6 +1,3 @@
-import { Producto } from "./classProducto.js";
-import { Reserva } from "./classReserva.js";
-
 import * as Cafeteria from "./cafeteria.js"
 
 const div2 = document.querySelector("#menu-div");
@@ -58,6 +55,7 @@ cliButton.addEventListener("click", function() {
 formAgregarProducto.addEventListener("submit", (event) => {
     event.preventDefault();
     const producto = Cafeteria.CrearProducto(nombre.value, descripcion.value, parseFloat(precio.value), cantidad.value,categoria.value);
+    console.log(Cafeteria.VerificarCampos(nombre.value, descripcion.value, parseFloat(precio.value), cantidad.value,categoria.value));
     if(!Cafeteria.VerificarCampos(nombre.value, descripcion.value, parseFloat(precio.value), cantidad.value,categoria.value)) return;
     Cafeteria.InsertarProducto(producto);
     renderizarProductos();

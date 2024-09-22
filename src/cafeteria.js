@@ -6,10 +6,11 @@ let Reservas = [];
 
 
 function VerificarCampos(nombre,descripcion,precio,cantidad){
+    let campos_validos = true
     if (nombre === '' || descripcion === '' || precio === '' || cantidad === '') {
-        return false; 
+        campos_validos = false; 
     }
-    return true;
+    return campos_validos;
 }
 function ActualizarMenuCantidadProductoXReservaEliminado(listaMenu, posicion, cantidad){
     listaMenu[posicion].cantidad = listaMenu[posicion].cantidad + cantidad;

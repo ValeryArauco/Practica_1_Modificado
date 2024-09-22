@@ -12,20 +12,7 @@ describe("Mostrar Lista de Productos Estatica", () => {
   });
 });
 
-describe("Reservar un producto de una lista Estatica", () => {
-  it("Agregar el primer producto de la lista a la lista de reservas", () => {
-    expect(Reservar(["cafe","mocca","te"],["cafe"],[],1)).toEqual(["cafe"]);
-  });
-  it("Agregar los dos primeros productos de la lista a la lista de reservas", () => {
-    expect(Reservar(["cafe","mocca"],["cafe","mocca"],[],1)).toEqual(["cafe","mocca"]);
-  });
-  it("deberia buscar el producto de la lista de reservas en la lista de productos ", () => {
-    expect(Reservar(["cafe","mocca"],["mocca"],[],1)).toEqual(["mocca"]);
-  });
-  it("deberia buscar los productos de la lista de reservas en la lista de productos y devolver la lista de reservas", () => {
-    expect(Reservar(["cafe","mocca","te","sandwich"],["mocca","sandwich"], [],1)).toEqual(["mocca","sandwich"]);
-  });
-});
+
 
 describe("Mostrar Lista de Reservas Estatica", () => {
   it("deberia mostrar un producto", () => {
@@ -167,16 +154,16 @@ describe("Veriificacion de campos vacios", () => {
 
 describe("Reservar un producto por cantidad", () => {
   it("deberia reservar 1 producto por defecto", () => {
-    expect(Reservar([new Producto('cafe','en grano',5,10,'cafes'),new Producto('sandwich','pan con huevo',6,5,'Refrigerios')],[new Producto('cafe','en grano',5,10,'cafes')],[],1)).toEqual([new Reserva(new Producto('cafe','en grano',5,10,'cafes'),1)]);
+    expect(Reservar([new Producto('cafe','en grano',5,10,'cafes'),new Producto('sandwich','pan con huevo',6,5,'Refrigerios')],new Producto('cafe','en grano',5,10,'cafes'),[],1)).toEqual([new Reserva(new Producto('cafe','en grano',5,10,'cafes'),1)]);
   });
   // it("si se reserva una cantidad de 2 de cualquier producto debe añadirse el mismo producto 2 veces a la lista de reservas", () => {
   //   expect(Reservar([new Producto('cafe','en grano',5,10,'cafes'),new Producto('sandwich','pan con huevo',6,5,'Refrigerios')],[new Producto('cafe','en grano',5,10,'cafes')],[],2)).toEqual([new Producto('cafe','en grano',5,10,'cafes'),new Producto('cafe','en grano',5,10,'cafes')]);
   // });
   it("si se reserva mas de un producto debe aparecer la cantidad en la lista de reservas en lugar de añadirse cuantos productos se haya resrevado", () => {
-    expect(Reservar([new Producto('cafe','en grano',5,10,'cafes'),new Producto('sandwich','pan con huevo',6,5,'Refrigerios')],[new Producto('cafe','en grano',5,10,'cafes')],[],2)).toEqual([new Reserva(new Producto('cafe','en grano',5,10,'cafes'),2)]);
+    expect(Reservar([new Producto('cafe','en grano',5,10,'cafes'),new Producto('sandwich','pan con huevo',6,5,'Refrigerios')],new Producto('cafe','en grano',5,10,'cafes'),[],2)).toEqual([new Reserva(new Producto('cafe','en grano',5,10,'cafes'),2)]);
   });
   it("resrevar una cantidad mayor a la cantidad disponible del producto deberia devolver una lista vacia", () => {
-    expect(Reservar([new Producto('cafe','en grano',5,2,'cafes'),new Producto('sandwich','pan con huevo',6,5,'Refrigerios')],[new Producto('cafe','en grano',5,2,'cafes')],[],3)).toEqual([]);
+    expect(Reservar([new Producto('cafe','en grano',5,2,'cafes'),new Producto('sandwich','pan con huevo',6,5,'Refrigerios')],new Producto('cafe','en grano',5,2,'cafes'),[],3)).toEqual([]);
   });
 });
 describe('Reserva', () => {
